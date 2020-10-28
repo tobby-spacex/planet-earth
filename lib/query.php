@@ -1,17 +1,20 @@
-<?php
-require('config/db.php');
+<?php require('config/db.php');
 
-$query = 'SELECT * FROM country WHERE id = 1';
-// $query = 'SELECT * FROM situation';
+// $query = 'SELECT * FROM country LIMIT 2';
+// // $query = 'SELECT * FROM situation';
+// $result = mysqli_query($conn, $query);
+// $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// mysqli_free_result($result);
+// // Close Connection
+// mysqli_close($conn);
 
-$result = mysqli_query($conn, $query);
-$post = mysqli_fetch_assoc($result);
+$title = "SELECT name FROM country WHERE id";
+$result=mysqli_query($conn, $title);
 
-
-mysqli_free_result($result);
-
-// Close Connection
-mysqli_close($conn);
+// while($titlerows = mysqli_fetch_row($result)){
+//     echo $titlerows[1].'<br />';
+// }
+$titlerows = mysqli_fetch_row($result);
 
 ?>
 
